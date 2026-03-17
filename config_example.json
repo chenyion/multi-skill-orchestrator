@@ -1,0 +1,79 @@
+{
+    "system": {
+        "name": "多技能智能编排系统",
+        "version": "1.0.0",
+        "description": "智能多技能编排系统配置文件示例"
+    },
+    "execution": {
+        "max_concurrent_tasks": 5,
+        "default_retry_count": 3,
+        "timeout_multiplier": 2.0,
+        "enable_parallel_execution": true,
+        "enable_auto_correction": true,
+        "enable_template_suggestion": true
+    },
+    "retry_strategy": {
+        "retry_delay_base": 1.0,
+        "retry_delay_max": 60.0,
+        "backoff_factor": 2.0,
+        "jitter": true
+    },
+    "logging": {
+        "log_level": "INFO",
+        "log_file": "/tmp/multi_skill_orchestrator.log",
+        "max_log_size_mb": 10,
+        "backup_count": 5
+    },
+    "persistence": {
+        "persist_execution_history": true,
+        "max_history_size": 1000,
+        "history_file": "/tmp/execution_history.json",
+        "template_dir": "/tmp/templates"
+    },
+    "monitoring": {
+        "enable_performance_monitoring": true,
+        "metrics_interval_seconds": 60,
+        "alert_on_error_rate": 0.2,
+        "alert_on_timeout_rate": 0.1
+    },
+    "skills": {
+        "data_analysis": {
+            "enabled": true,
+            "timeout_seconds": 300,
+            "memory_limit_mb": 1024
+        },
+        "document_creation": {
+            "enabled": true,
+            "timeout_seconds": 600,
+            "memory_limit_mb": 512
+        },
+        "image_generation": {
+            "enabled": true,
+            "timeout_seconds": 180,
+            "memory_limit_mb": 2048
+        },
+        "web_development": {
+            "enabled": true,
+            "timeout_seconds": 900,
+            "memory_limit_mb": 1024
+        }
+    },
+    "templates": {
+        "preload_templates": true,
+        "auto_save_successful_flows": true,
+        "max_custom_templates": 100,
+        "template_match_threshold": 0.3
+    },
+    "optimization": {
+        "enable_caching": true,
+        "cache_size_mb": 100,
+        "enable_prefetch": false,
+        "optimization_aggressiveness": "balanced"
+    },
+    "security": {
+        "validate_user_input": true,
+        "sanitize_output": true,
+        "max_input_length": 10000,
+        "allowed_file_types": [".json", ".txt", ".md", ".csv"]
+    }
+}
